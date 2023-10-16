@@ -1,0 +1,34 @@
+.main-nav{
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8rem;
+    width: 100%;
+    font-size: 1.25rem;
+    box-shadow: var(--dark-grey) 0px 15px 20px -20px;
+    position: fixed;
+    top: 0;
+}
+.main-nav-dark{
+    background-color: var(--dark-blue);
+    box-shadow: var(--very-dark-blue-dark-mode) 0px 15px 20px -20px;
+}
+.nav-head-light{
+    font-weight: 800;
+    color: var(--very-dark-blue-light-mode);
+}
+.nav-head-dark{
+    font-weight: 800;
+    color: var(--white);
+}
+.mode-light{
+    font-weight: 600;
+    color: var(--very-dark-blue-light-mode);
+    cursor: pointer;
+}
+.mode-dark{
+    font-weight: 600;
+    color: var(--white);
+    cursor: pointer;
+}

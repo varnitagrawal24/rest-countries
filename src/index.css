@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* typography */
+  font-size: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+  /* colors */
+  --dark-blue:hsl(209, 23%, 22%);
+  --very-dark-blue-dark-mode:hsl(207, 26%, 17%);
+  --very-dark-blue-light-mode:hsl(200, 15%, 8%);
+  --dark-grey: hsl(0, 0%, 52%);
+  --very-light-grey:hsl(0, 0%, 98%);
+  --white:hsl(0, 0%, 100%);
+}
+body{
+  width: 100vw;
+  height: 100vh;
+}
+#root{
+  width: 100%;
+  height: 100%;
+}
+

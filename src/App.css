@@ -1,0 +1,38 @@
+.main-container{
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--very-light-grey);
+}
+.main-container-dark{
+    background-color: var(--very-dark-blue-dark-mode);
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 3rem;
+    
+}
+.error{
+    color: var(--very-dark-blue-light-mode);
+    text-align: center;
+}
+.card-error{
+    color: var(--very-dark-blue-light-mode);
+}
+.main-container-dark .card-error{
+    color: var(--white);
+}
+
+@media (min-width:1000px){
+    .cards{
+        justify-content: left;
+        gap: 5rem;
+        padding: 2rem 7rem;
+    }
+    .card-error{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
