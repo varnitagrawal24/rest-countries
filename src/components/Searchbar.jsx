@@ -7,12 +7,7 @@ import { DarkModeContext } from "../App";
 function Searchbar({ data, setCountry, setRegion }) {
   const [darkMode] = useContext(DarkModeContext);
 
-  let uniqueRegions = new Set();
-
-  data.forEach((element) => {
-    uniqueRegions.add(element.region);
-  });
-  uniqueRegions = Array.from(uniqueRegions).sort();
+  let uniqueRegions = [...new Set(data.map((element) => element.region))].sort();
 
   return (
     <div

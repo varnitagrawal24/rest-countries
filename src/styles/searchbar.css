@@ -6,6 +6,8 @@
     gap: 2rem;
 }
 .input-bar{
+    max-width: 25rem;
+    width: 90%;
     background-color: var(--white);
     padding: 1rem 1.2rem;
     display: flex;
@@ -27,6 +29,7 @@
     border: none;
     outline: none;
     font-size: 1.4rem;
+    width: 100%;
 }
 .search-container-dark input{
     background-color: var(--dark-blue);

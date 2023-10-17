@@ -42,15 +42,11 @@ function App() {
     return <Loader />;
   }
 
-  let newData = [...data];
-  if (region) {
-    newData = newData.filter((element) => element.region === region);
-  }
-  if (country) {
-    newData = newData.filter((element) =>
+  let newData = data
+    .filter((element) => element.region.includes(region))
+    .filter((element) =>
       element.name.common.toUpperCase().includes(country.toUpperCase())
     );
-  }
 
   return (
     <DarkModeContext.Provider value={[darkMode, setDarkMode]}>
