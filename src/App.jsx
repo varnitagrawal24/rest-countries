@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Card from "./components/Card";
 import Loader from "./components/Loader";
+import { filterData } from "./assets/filterData";
 
 export const DarkModeContext = createContext();
 
@@ -12,6 +13,8 @@ function App() {
   const [data, setData] = useState();
   const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
+  const [subRegion, setSubRegion] = useState("");
+  const [sort, setSort] = useState("");
   const [loader, setLoader] = useState(true);
   const [error, setError] = useState(false);
 
@@ -42,11 +45,7 @@ function App() {
     return <Loader />;
   }
 
-  let newData = data
-    .filter((element) => element.region.includes(region))
-    .filter((element) =>
-      element.name.common.toUpperCase().includes(country.toUpperCase())
-    );
+  let newData = filterData(data, region, subRegion, country, sort);
 
   return (
     <DarkModeContext.Provider value={[darkMode, setDarkMode]}>
@@ -54,7 +53,14 @@ function App() {
         className={(darkMode ? "main-container-dark " : "") + "main-container"}
       >
         <Navbar />
-        <Searchbar data={data} setCountry={setCountry} setRegion={setRegion} />
+        <Searchbar
+          data={data}
+          setCountry={setCountry}
+          setRegion={setRegion}
+          region={region}
+          setSubRegion={setSubRegion}
+          setSort={setSort}
+        />
         <div className="cards">
           {newData.length ? (
             newData.map((element) => {
