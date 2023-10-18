@@ -7,7 +7,7 @@
     width: 100%;
     font-size: 1.25rem;
     box-shadow: var(--dark-grey) 0px 15px 20px -20px;
-    position: fixed;
+    position: sticky;
     top: 0;
 }
 .main-nav-dark{

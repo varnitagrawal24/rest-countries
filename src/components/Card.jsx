@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import "../styles/card.css";
 import { useContext } from "react";
-import { DarkModeContext } from "../App";
+import { StateContext } from "../context/ContextProvider";
 
 function Card({ country }) {
-  const [darkMode] = useContext(DarkModeContext);
+  const {darkMode} = useContext(StateContext);
 
   return (
     <div

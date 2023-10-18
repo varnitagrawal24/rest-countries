@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import "../styles/navbar.css";
 import { BiMoon, BiSolidMoon } from "react-icons/bi";
-import { DarkModeContext } from "../App";
+import { StateContext } from "../context/ContextProvider";
 
 function Navbar() {
-  const [darkMode, setDarkMode] = useContext(DarkModeContext);
+  const { darkMode, setDarkMode } = useContext(StateContext);
 
   return (
     <nav className={(darkMode ? "main-nav-dark " : "") + "main-nav"}>

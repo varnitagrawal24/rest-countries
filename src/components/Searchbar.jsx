@@ -1,20 +1,20 @@
 import { BiSearch } from "react-icons/bi";
-import PropTypes from "prop-types";
 import "../styles/searchbar.css";
 import { useContext } from "react";
-import { DarkModeContext } from "../App";
 import { uniqueRegion } from "../assets/uniqueRegion";
 import { UniqueSubRegion } from "../assets/uniqueSubregion";
+import { StateContext } from "../context/ContextProvider";
 
-function Searchbar({
-  data,
-  setCountry,
-  setRegion,
-  region,
-  setSubRegion,
-  setSort,
-}) {
-  const [darkMode] = useContext(DarkModeContext);
+function Searchbar() {
+  const {
+    darkMode,
+    data,
+    setCountry,
+    setRegion,
+    region,
+    setSubRegion,
+    setSort,
+  } = useContext(StateContext);
 
   const uniqueRegions = uniqueRegion(data);
 
@@ -99,14 +99,5 @@ function Searchbar({
     </div>
   );
 }
-
-Searchbar.propTypes = {
-  data: PropTypes.array,
-  setCountry: PropTypes.func,
-  setRegion: PropTypes.func,
-  setSubRegion: PropTypes.func,
-  region: PropTypes.string,
-  setSort: PropTypes.func,
-};
 
 export default Searchbar;
