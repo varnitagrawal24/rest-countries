@@ -23,7 +23,9 @@
 .main-container-dark .card-error{
     color: var(--white);
 }
-
+.main-container-dark .error{
+    color: var(--white);
+}
 @media (min-width:1000px){
     .cards{
         justify-content: left;

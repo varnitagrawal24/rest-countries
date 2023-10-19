@@ -10,10 +10,13 @@ function Searchbar() {
     darkMode,
     data,
     setCountry,
+    country,
     setRegion,
     region,
+    subRegion,
     setSubRegion,
     setSort,
+    sort
   } = useContext(StateContext);
 
   const uniqueRegions = uniqueRegion(data);
@@ -32,6 +35,7 @@ function Searchbar() {
           type="text"
           placeholder="Search for a country..."
           onChange={(e) => setCountry(e.target.value)}
+          value={country}
         />
       </div>
       <div className={"drop-down-container"}>
@@ -39,7 +43,9 @@ function Searchbar() {
           onChange={(e) => {
             setRegion(e.target.value);
             setSubRegion("");
-          }}
+          }
+        }
+        value={region}
         >
           <option value="" defaultValue={true} hidden>
             Filter by Region
@@ -59,7 +65,7 @@ function Searchbar() {
         </select>
       </div>
       <div className={"drop-down-container"}>
-        <select onChange={(e) => setSubRegion(e.target.value)}>
+        <select onChange={(e) => setSubRegion(e.target.value)} value={subRegion}>
           <option value="" defaultValue={true} hidden>
             Filter by Subregion
           </option>
@@ -78,7 +84,7 @@ function Searchbar() {
         </select>
       </div>
       <div className={"drop-down-container"}>
-        <select onChange={(e) => setSort(e.target.value)}>
+        <select onChange={(e) => setSort(e.target.value)} value={sort}>
           <option value="" defaultValue={true} hidden>
             Sort by
           </option>
